@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-campos-navy: #2B2F53;
+  --color-campos-navy-dark: #1C1F38;
+  --color-campos-navy-light: #3A3F5F;
+  --color-campos-accent: #4DA6FF;
+  --color-campos-blue: #007AFF;
+  --color-campos-sky: #1DA1F2;
+  --color-campos-success: #00C853;
+  --color-campos-error: #FF6B6B;
+
+  --color-campos-dark-bg: #111315;
+  --color-campos-dark-surface: #171A1E;
+  --color-campos-dark-card: #1C2733;
+  --color-campos-dark-border: #2C3E50;
+  --color-campos-dark-text: #E6EEF6;
+  --color-campos-dark-muted: #A0A0A0;
+
+  --color-campos-light-bg: #FFFFFF;
+  --color-campos-light-surface: #F8FAFC;
+  --color-campos-light-card: #FFFFFF;
+  --color-campos-light-border: #E1E8ED;
+  --color-campos-light-text: #1C2733;
+  --color-campos-light-muted: #6C757D;
+
+  --font-poppins: var(--font-poppins), sans-serif;
+  --font-geist: var(--font-geist), sans-serif;
+
+  --radius-card: 16px;
+  --radius-btn: 12px;
+}
+
+:root {
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F8FAFC;
+  --surface-card: #FFFFFF;
+  --border-color: #E1E8ED;
+  --text-primary: #1C2733;
+  --text-muted: #6C757D;
+  --brand-primary: #2B2F53;
+  --brand-accent: #007AFF;
+}
+
+.dark {
+  --bg-primary: #111315;
+  --bg-secondary: #171A1E;
+  --surface-card: #1C2733;
+  --border-color: #2C3E50;
+  --text-primary: #E6EEF6;
+  --text-muted: #A0A0A0;
+  --brand-primary: #3A3F5F;
+  --brand-accent: #4DA6FF;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-poppins), sans-serif;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+@keyframes arrow-nudge {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(3.5px);
+  }
+}
+
+.animate-arrow-nudge {
+  animation: arrow-nudge 1.4s ease-in-out infinite;
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-scale-in {
+  animation: scale-in 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.2s ease-out forwards;
+}
+
