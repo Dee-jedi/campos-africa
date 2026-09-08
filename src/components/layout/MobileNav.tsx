@@ -3,7 +3,7 @@
 import React, { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { NAV_LINKS, APP_URLS } from "@/data/navigation";
+import { NAV_LINKS } from "@/data/navigation";
 
 interface MobileNavProps {
   isOpen: boolean;
@@ -27,24 +27,24 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
     <div className="lg:hidden">
       {/* Full-screen backdrop blur behind the drawer */}
       <div
-        className={`fixed inset-0 bg-slate-950/40 backdrop-blur-md z-[50] transition-opacity duration-300 ${
+        className={`fixed inset-0 bg-slate-950/40 backdrop-blur-md z-50 transition-opacity duration-300 ${
           isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
         onClick={onClose}
         aria-hidden="true"
       />
 
-      {/* Full-height, straight-sided ~70% screen width mobile drawer (z-[55], under the z-[60] hamburger) */}
+      {/* Full-height, straight-sided ~70% screen width mobile drawer (z-55, under the z-60 hamburger) */}
       <div
-        className={`fixed top-0 right-0 bottom-0 h-full h-dvh w-[75vw] sm:w-[65vw] max-w-[340px] bg-white rounded-none shadow-2xl border-l border-slate-200 z-[55] transition-transform duration-300 ease-out flex flex-col justify-between p-6 sm:p-7 overflow-y-auto ${
+        className={`fixed top-0 right-0 bottom-0 h-dvh w-[75vw] sm:w-[65vw] max-w-85 bg-white rounded-none shadow-2xl border-l border-slate-200 z-55 transition-transform duration-300 ease-out flex flex-col justify-between p-6 sm:p-7 overflow-y-auto ${
           isOpen ? "translate-x-0 pointer-events-auto" : "translate-x-full pointer-events-none"
         }`}
         role="dialog"
         aria-modal="true"
       >
         <div>
-          {/* Top Header inside drawer (pr-12 leaves space for the z-[60] button sitting in the top right) */}
-          <div className="flex items-center justify-between pb-5 mb-5 border-b border-slate-100 pr-12 min-h-[44px]">
+          {/* Top Header inside drawer (pr-12 leaves space for the z-60 button sitting in the top right) */}
+          <div className="flex items-center justify-between pb-5 mb-5 border-b border-slate-100 pr-12 min-h-11">
             <div className="flex items-center gap-2.5">
               <div className="relative w-8 h-8 rounded-lg overflow-hidden shadow-xs">
                 <Image

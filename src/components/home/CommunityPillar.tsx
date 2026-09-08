@@ -18,7 +18,7 @@ export const CommunityPillar: React.FC = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Card 1: Campus Wire & Gist with blog.jpeg */}
-          <div className="bg-gradient-to-br from-amber-50/40 via-slate-50 to-white rounded-3xl p-6 sm:p-10 border border-slate-200/80 shadow-sm flex flex-col justify-between h-full">
+          <div className="bg-linear-to-br from-amber-50/40 via-slate-50 to-white rounded-3xl p-6 sm:p-10 border border-slate-200/80 shadow-sm flex flex-col justify-between h-full">
             <div>
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-bold mb-4">
                 📰 Campus Wire & Student Gist
@@ -56,7 +56,7 @@ export const CommunityPillar: React.FC = () => {
           </div>
 
           {/* Card 2: Leaderboard with leaderboard.jpeg */}
-          <div className="bg-gradient-to-br from-blue-50/40 via-slate-50 to-white rounded-3xl p-6 sm:p-10 border border-slate-200/80 shadow-sm flex flex-col justify-between h-full">
+          <div className="bg-linear-to-br from-blue-50/40 via-slate-50 to-white rounded-3xl p-6 sm:p-10 border border-slate-200/80 shadow-sm flex flex-col justify-between h-full">
             <div>
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-100 text-campos-blue text-xs font-bold mb-4">
                 🏆 Study Streaks & Cash Payouts

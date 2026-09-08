@@ -36,15 +36,15 @@ export const PhoneMockup: React.FC<PhoneMockupProps> = ({
   };
 
   return (
-    <div className={`relative mx-auto flex-shrink-0 ${sizeMap[size]} ${className}`}>
+    <div className={`relative mx-auto shrink-0 ${sizeMap[size]} ${className}`}>
       {/* Ambient device glow effect */}
-      <div className="absolute -inset-2 sm:-inset-4 bg-gradient-to-tr from-campos-navy/15 via-campos-accent/20 to-campos-blue/15 rounded-[44px] sm:rounded-[60px] blur-xl sm:blur-2xl -z-10 opacity-50 sm:opacity-70" />
+      <div className="absolute -inset-2 sm:-inset-4 bg-linear-to-tr from-campos-navy/15 via-campos-accent/20 to-campos-blue/15 rounded-[44px] sm:rounded-[60px] blur-xl sm:blur-2xl -z-10 opacity-50 sm:opacity-70" />
 
       {/* Phone chassis */}
-      <div className="relative rounded-[36px] sm:rounded-[44px] md:rounded-[48px] p-[2.5px] sm:p-[3px] bg-gradient-to-b from-slate-700 via-slate-850 to-slate-950 shadow-xl sm:shadow-2xl shadow-slate-950/30">
-        <div className="relative rounded-[33px] sm:rounded-[41px] md:rounded-[45px] border-[5px] sm:border-[7px] md:border-[8px] border-slate-950 bg-white overflow-hidden flex flex-col">
+      <div className="relative rounded-[36px] sm:rounded-[44px] md:rounded-[48px] p-[2.5px] sm:p-0.75 bg-linear-to-b from-slate-700 via-slate-850 to-slate-950 shadow-xl sm:shadow-2xl shadow-slate-950/30">
+        <div className="relative rounded-[33px] sm:rounded-[41px] md:rounded-[45px] border-[5px] sm:border-[7px] md:border-8 border-slate-950 bg-white overflow-hidden flex flex-col">
           {/* Integrated Status Bar Safe Area Header */}
-          <div className="relative h-7 sm:h-8 md:h-9 w-full bg-white flex items-center justify-between px-4 sm:px-5 md:px-6 flex-shrink-0 select-none z-20 border-b border-slate-50">
+          <div className="relative h-7 sm:h-8 md:h-9 w-full bg-white flex items-center justify-between px-4 sm:px-5 md:px-6 shrink-0 select-none z-20 border-b border-slate-50">
             {/* Clock */}
             <span className="text-[10px] sm:text-[11px] md:text-xs font-semibold text-slate-800 tracking-tight">
               9:41
@@ -68,14 +68,14 @@ export const PhoneMockup: React.FC<PhoneMockupProps> = ({
                 <path d="M12 4C7.31 4 3.07 5.9 0 8.98L12 21 24 8.98C20.93 5.9 16.69 4 12 4zm0 3.5c3.78 0 7.22 1.48 9.77 3.93L12 18.57 2.23 11.43C4.78 8.98 8.22 7.5 12 7.5z" />
               </svg>
               {/* Battery */}
-              <div className="w-4 sm:w-5 h-2 sm:h-2.5 border border-slate-800 rounded-[2.5px] sm:rounded-[3px] p-[1px] flex items-center">
+              <div className="w-4 sm:w-5 h-2 sm:h-2.5 border border-slate-800 rounded-[2.5px] sm:rounded-[3px] p-px flex items-center">
                 <div className="h-full w-2.5 sm:w-3.5 bg-slate-800 rounded-[1px]" />
               </div>
             </div>
           </div>
 
           {/* Screenshot Container (Starts safely below status bar, exactly matching aspect ratio) */}
-          <div className="relative w-full aspect-[1080/2260] bg-white overflow-hidden">
+          <div className="relative w-full aspect-1080/2260 bg-white overflow-hidden">
             <Image
               src={imageSrc}
               alt={alt}
@@ -87,11 +87,11 @@ export const PhoneMockup: React.FC<PhoneMockupProps> = ({
             />
 
             {/* Glass reflection gloss */}
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-white/[0.04] via-transparent to-white/[0.06] z-10" />
+            <div className="pointer-events-none absolute inset-0 bg-linear-to-tr from-white/4 via-transparent to-white/6 z-10" />
           </div>
 
           {/* Home indicator bar (subtle safe area buffer) */}
-          <div className="h-3 sm:h-3.5 md:h-4 w-full bg-white flex items-center justify-center flex-shrink-0 select-none border-t border-slate-50">
+          <div className="h-3 sm:h-3.5 md:h-4 w-full bg-white flex items-center justify-center shrink-0 select-none border-t border-slate-50">
             <div className="w-20 sm:w-24 md:w-28 h-0.5 sm:h-1 bg-slate-300 rounded-full" />
           </div>
         </div>

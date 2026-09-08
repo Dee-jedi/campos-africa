@@ -89,12 +89,12 @@ export const Navbar: React.FC = () => {
 
       {/* 
         Single Animated Hamburger / X Button
-        Positioned at fixed z-[60] so it ALWAYS renders above both backdrop (z-[50]) and sliding drawer (z-[55]).
+        Positioned at fixed z-60 so it ALWAYS renders above both backdrop (z-50) and sliding drawer (z-55).
         When clicked, the button morphs from 2 lines into an X while the drawer slides in underneath it to meet it!
       */}
       <button
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        className="lg:hidden fixed top-3.5 sm:top-4.5 right-4 sm:right-6 w-11 h-11 rounded-full bg-blue-50/95 hover:bg-blue-100/95 border border-blue-100 active:scale-95 transition-all flex flex-col items-center justify-center gap-[5px] focus:outline-none z-[60] shadow-xs cursor-pointer"
+        className="lg:hidden fixed top-3.5 sm:top-4.5 right-4 sm:right-6 w-11 h-11 rounded-full bg-blue-50/95 hover:bg-blue-100/95 border border-blue-100 active:scale-95 transition-all flex flex-col items-center justify-center gap-1.25 focus:outline-none z-60 shadow-xs cursor-pointer"
         aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
         aria-expanded={mobileMenuOpen}
       >
@@ -108,8 +108,8 @@ export const Navbar: React.FC = () => {
         <span
           className={`h-[2.5px] rounded-full bg-campos-navy transition-all duration-300 ease-in-out ${
             mobileMenuOpen
-              ? "w-5 -translate-y-[3.75px] -rotate-45"
-              : "w-3.5 -translate-x-[3px]"
+              ? "w-5 translate-y-[-3.75px] -rotate-45"
+              : "w-3.5 -translate-x-0.75"
           }`}
         />
       </button>

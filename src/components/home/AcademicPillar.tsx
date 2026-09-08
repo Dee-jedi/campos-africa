@@ -48,7 +48,7 @@ export const AcademicPillar: React.FC = () => {
         </div>
 
         {/* Feature Spotlight Card */}
-        <div className="bg-gradient-to-br from-slate-50 via-blue-50/20 to-white rounded-3xl p-6 sm:p-10 md:p-14 border border-slate-200/80 shadow-sm">
+        <div className="bg-linear-to-br from-slate-50 via-blue-50/20 to-white rounded-3xl p-6 sm:p-10 md:p-14 border border-slate-200/80 shadow-sm">
           <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-14">
             {/* Visual Device Mockup */}
             <div className="w-full lg:w-1/2 flex justify-center order-2 lg:order-1">
@@ -100,7 +100,7 @@ export const AcademicPillar: React.FC = () => {
                 {(activeTab === "ai" ? ACADEMIC_FEATURES[1] : ACADEMIC_FEATURES[0]).benefits.map(
                   (benefit) => (
                     <li key={benefit} className="flex items-start gap-3 text-xs sm:text-sm font-medium text-slate-700">
-                      <span className="flex-shrink-0 w-5 h-5 rounded-full bg-blue-100 text-campos-blue flex items-center justify-center font-bold text-xs">
+                      <span className="shrink-0 w-5 h-5 rounded-full bg-blue-100 text-campos-blue flex items-center justify-center font-bold text-xs">
                         ✓
                       </span>
                       <span>{benefit}</span>

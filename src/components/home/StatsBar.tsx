@@ -49,7 +49,7 @@ const StatItem = ({ stat }: { stat: typeof STATS[0] }) => {
         {stat.label}
       </span>
       {stat.sublabel && (
-        <span className="text-xs sm:text-sm text-slate-500 mt-1 max-w-[200px] hidden sm:block">
+        <span className="text-xs sm:text-sm text-slate-500 mt-1 max-w-50 hidden sm:block">
           {stat.sublabel}
         </span>
       )}

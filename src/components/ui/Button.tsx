@@ -53,7 +53,7 @@ export const Button: React.FC<ButtonProps> = ({
   if (href) {
     return (
       <a href={href} target={target} rel={rel} className={combinedClasses}>
-        {icon && <span className="flex-shrink-0">{icon}</span>}
+        {icon && <span className="shrink-0">{icon}</span>}
         <span>{children}</span>
       </a>
     );
@@ -61,7 +61,7 @@ export const Button: React.FC<ButtonProps> = ({
 
   return (
     <button className={combinedClasses} {...props}>
-      {icon && <span className="flex-shrink-0">{icon}</span>}
+      {icon && <span className="shrink-0">{icon}</span>}
       <span>{children}</span>
     </button>
   );

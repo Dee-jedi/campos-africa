@@ -1,14 +1,13 @@
 import React from "react";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
-import { Button } from "@/components/ui/Button";
 import { APP_URLS } from "@/data/navigation";
 
 export const CtaBanner: React.FC = () => {
   return (
     <section className="py-16 sm:py-24 bg-white relative overflow-hidden">
       <Container>
-        <div className="relative rounded-3xl sm:rounded-[36px] bg-gradient-to-br from-campos-navy via-campos-navy-dark to-black p-8 sm:p-12 md:p-16 text-center text-white overflow-hidden shadow-2xl shadow-campos-navy/30">
+        <div className="relative rounded-3xl sm:rounded-[36px] bg-linear-to-br from-campos-navy via-campos-navy-dark to-black p-8 sm:p-12 md:p-16 text-center text-white overflow-hidden shadow-2xl shadow-campos-navy/30">
           {/* Ambient lighting */}
           <div className="absolute top-0 right-0 w-80 h-80 bg-campos-accent/20 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-80 h-80 bg-campos-blue/20 rounded-full blur-3xl pointer-events-none" />

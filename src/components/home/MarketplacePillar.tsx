@@ -48,7 +48,7 @@ export const MarketplacePillar: React.FC = () => {
 
             <div className="space-y-4 mb-8">
               <div className="flex items-start gap-3.5">
-                <div className="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-0.5">
+                <div className="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold text-sm shrink-0 mt-0.5">
                   🤝
                 </div>
                 <div>
@@ -58,7 +58,7 @@ export const MarketplacePillar: React.FC = () => {
               </div>
 
               <div className="flex items-start gap-3.5">
-                <div className="w-8 h-8 rounded-lg bg-blue-50 text-campos-blue flex items-center justify-center font-bold text-sm flex-shrink-0 mt-0.5">
+                <div className="w-8 h-8 rounded-lg bg-blue-50 text-campos-blue flex items-center justify-center font-bold text-sm shrink-0 mt-0.5">
                   🏪
                 </div>
                 <div>
@@ -68,7 +68,7 @@ export const MarketplacePillar: React.FC = () => {
               </div>
 
               <div className="flex items-start gap-3.5">
-                <div className="w-8 h-8 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-0.5">
+                <div className="w-8 h-8 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center font-bold text-sm shrink-0 mt-0.5">
                   🏠
                 </div>
                 <div>
