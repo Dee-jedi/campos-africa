@@ -43,7 +43,7 @@ export const HeroSection: React.FC = () => {
   }, [displayedText, isDeleting, uniIndex]);
 
   return (
-    <section className="relative overflow-hidden pt-20 sm:pt-28 md:pt-32 pb-14 sm:pb-20 bg-white text-center">
+    <section className="relative overflow-hidden pt-32 sm:pt-40 md:pt-48 pb-14 sm:pb-20 bg-white text-center">
       {/* Background Decorative Mesh Blur */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-137.5 overflow-hidden pointer-events-none -z-10">
         <div className="absolute top-10 left-1/4 w-72 h-72 bg-blue-400/10 rounded-full blur-3xl" />

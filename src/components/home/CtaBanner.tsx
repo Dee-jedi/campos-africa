@@ -1,68 +1,71 @@
 import React from "react";
-import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { APP_URLS } from "@/data/navigation";
 
 export const CtaBanner: React.FC = () => {
   return (
-    <section className="py-16 sm:py-24 bg-white relative overflow-hidden">
+    <section className="pt-24 sm:pt-32 pb-16 sm:pb-24 bg-white relative overflow-hidden flex flex-col items-center justify-center">
+      {/* Subtle Background Rings */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] border border-slate-100 rounded-full pointer-events-none"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[900px] h-[600px] sm:h-[900px] border border-slate-50 rounded-full pointer-events-none"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] sm:w-[1200px] h-[800px] sm:h-[1200px] border border-slate-50/50 rounded-full pointer-events-none"></div>
+      
       <Container>
-        <div className="relative rounded-3xl sm:rounded-[36px] bg-linear-to-br from-campos-navy via-campos-navy-dark to-black p-8 sm:p-12 md:p-16 text-center text-white overflow-hidden shadow-2xl shadow-campos-navy/30">
-          {/* Ambient lighting */}
-          <div className="absolute top-0 right-0 w-80 h-80 bg-campos-accent/20 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-80 h-80 bg-campos-blue/20 rounded-full blur-3xl pointer-events-none" />
+        <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
+          {/* Over-heading */}
+          <h4 className="font-geist text-sm sm:text-base font-bold text-slate-500 mb-4 sm:mb-6 uppercase tracking-wider">
+            Ready to elevate your campus experience?
+          </h4>
 
-          {/* Logo icon header */}
-          <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 mb-6 shadow-inner relative overflow-hidden">
-            <Image
-              src="/images/icon.png"
-              alt="Campos icon"
-              fill
-              className="object-cover"
-            />
-          </div>
-
-          {/* Headline */}
-          <h2 className="font-geist text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-white max-w-2xl mx-auto leading-tight mb-4">
-            Join Thousands of Students Making Campus Life Smarter.
+          {/* Main Massive Heading */}
+          <h2 className="font-geist text-[3.5rem] leading-[1] sm:text-7xl md:text-8xl lg:text-[110px] font-black tracking-tight mb-6 sm:mb-10 sm:leading-[0.9]">
+            <span className="text-slate-400">Get</span> <span className="text-slate-900">Campos</span>
           </h2>
 
-          <p className="text-sm sm:text-base md:text-lg text-slate-300 max-w-xl mx-auto mb-8 font-normal leading-relaxed">
-            Get instant past questions, timed CBT mock exams, campus marketplace deals, and breaking news. 100% free to get started.
+          {/* Paragraph */}
+          <p className="text-sm sm:text-base md:text-lg text-slate-500 max-w-2xl mx-auto mb-10 sm:mb-12 font-medium leading-relaxed">
+            <span className="block sm:hidden">
+              Join thousands of students. Access study materials, AI tutoring, and the campus marketplace all in one place.
+            </span>
+            <span className="hidden sm:block">
+              Great things happen when the right materials, practice tools, and gamified learning agree. Join thousands of students using Campos to access study materials, AI tutoring, and trade on the campus marketplace.
+            </span>
           </p>
 
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 max-w-md mx-auto">
+          {/* Buttons: Fixed width to prevent stretching and perfectly match HeroSection visually */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href={APP_URLS.playStore}
               target="_blank"
               rel="noopener noreferrer"
-              className="group w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-white hover:bg-slate-100 text-campos-navy font-bold text-sm sm:text-base shadow-xl active:scale-[0.98] transition-all"
+              className="group w-[250px] px-6 py-3.5 bg-slate-900 hover:bg-black text-white rounded-full font-bold text-[1.05rem] transition-all duration-200 shadow-xl shadow-slate-900/15 active:scale-[0.98] flex items-center justify-center"
             >
-              <svg className="w-5 h-5 fill-current text-campos-navy" viewBox="0 0 24 24">
-                <path d="M3.609 1.814L13.792 12 3.61 22.186a1.99 1.99 0 0 1-.61-.92L3 21.2v-18.4l.001-.066c.036-.34.22-.656.608-.92zM15.207 13.414l2.553 2.554-11.458 6.505 8.905-9.059zm0-2.828l-8.905-9.06 11.458 6.506-2.553 2.554zm1.414 1.414l3.528 2.003c.895.508.895 1.336 0 1.844l-3.528 2.003-2.122-2.122 2.122-2.128z" />
+              <span className="whitespace-nowrap">Get App</span>
+              <svg className="w-5 h-5 ml-2 transition-transform duration-200 group-hover:translate-x-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 12h14M12 5l7 7-7 7" />
               </svg>
-              <span>Download on Play Store</span>
             </a>
             <a
               href={APP_URLS.webApp}
-              className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-sm sm:text-base border border-white/25 backdrop-blur-xs active:scale-[0.98] transition-all"
+              className="group w-[250px] px-6 py-3.5 bg-white hover:bg-slate-50 text-slate-800 border border-slate-200/90 hover:border-slate-300 rounded-full font-bold text-[1.05rem] shadow-xs hover:shadow-sm transition-all duration-200 active:scale-[0.98] flex items-center justify-center"
             >
-              <span>Launch Web App</span>
+              <span className="whitespace-nowrap">Launch Web App</span>
               <svg
-                className="w-4 h-4 text-campos-accent transition-transform duration-200 group-hover:translate-x-1"
+                className="w-4.5 h-4.5 ml-2 text-campos-blue transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 shrink-0"
+                viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                viewBox="0 0 24 24"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
+                <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
+                <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
+                <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
               </svg>
             </a>
           </div>
-
-          <p className="text-xs text-slate-400 mt-6 font-medium">
-            Available across all universities in Nigeria • Web & Mobile
-          </p>
         </div>
       </Container>
     </section>
