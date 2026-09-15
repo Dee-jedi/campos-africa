@@ -8,24 +8,32 @@ const cards = [
   {
     id: 'materials',
     pill: 'PDFs',
+    dotColor: 'bg-sky-400',
+    dotGlow: 'shadow-[0_0_8px_rgba(56,189,248,0.9)]',
     position: 'bottom',
     image: '/images/materials_simple.jpg',
   },
   {
     id: 'cbt',
     pill: 'EXAMS',
+    dotColor: 'bg-amber-400',
+    dotGlow: 'shadow-[0_0_8px_rgba(251,191,36,0.9)]',
     position: 'top',
     image: '/images/exams_simple.jpg',
   },
   {
     id: 'market',
     pill: 'SHOP',
+    dotColor: 'bg-emerald-400',
+    dotGlow: 'shadow-[0_0_8px_rgba(52,211,153,0.9)]',
     position: 'bottom',
     image: '/images/market_simple.jpg',
   },
   {
     id: 'ai',
     pill: 'AI CHAT',
+    dotColor: 'bg-violet-400',
+    dotGlow: 'shadow-[0_0_8px_rgba(167,139,250,0.9)]',
     position: 'top',
     image: '/images/robot_student_campos.jpg',
   }
@@ -57,16 +65,17 @@ export default function FeatureFan() {
               sizes="(max-width: 640px) 100px, (max-width: 768px) 180px, 240px"
             />
 
-            {/* Alternating Single-Word Deep Wine / Bordeaux Pill */}
+            {/* Refined Frosted Glass Micro-Pill with Glowing Feature Dot */}
             <div
               className={`absolute z-20 ${
                 card.position === 'top'
-                  ? 'top-1.5 left-1.5 sm:top-2.5 sm:left-2.5 md:top-3.5 md:left-3.5'
-                  : 'bottom-1.5 left-1.5 sm:bottom-2.5 sm:left-2.5 md:bottom-3.5 md:left-3.5'
+                  ? 'top-1.5 left-1.5 sm:top-2.5 sm:left-2.5 md:top-3 md:left-3'
+                  : 'bottom-1.5 left-1.5 sm:bottom-2.5 sm:left-2.5 md:bottom-3 md:left-3'
               }`}
             >
-              <span className="inline-flex items-center justify-center px-1.5 sm:px-2.5 md:px-3.5 py-0.5 sm:py-0.75 md:py-1 rounded-full bg-[#8B1E42] text-white font-black text-[7.5px] sm:text-[11px] md:text-xs tracking-tight sm:tracking-wider uppercase shadow-sm sm:shadow-md shadow-black/25 select-none">
-                {card.pill}
+              <span className="inline-flex items-center gap-1 sm:gap-1.5 px-2 sm:px-2.5 md:px-3 py-0.5 sm:py-0.75 rounded-full bg-slate-950/70 backdrop-blur-md text-white font-extrabold text-[8px] sm:text-[9.5px] md:text-[10.5px] tracking-wide uppercase border border-white/20 shadow-md shadow-black/30 select-none">
+                <span className={`w-1.25 sm:w-1.5 h-1.25 sm:h-1.5 rounded-full shrink-0 ${card.dotColor} ${card.dotGlow}`} />
+                <span>{card.pill}</span>
               </span>
             </div>
           </div>

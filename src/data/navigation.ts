@@ -1,9 +1,9 @@
 import { NavItem } from "@/types";
 
 export const NAV_LINKS: NavItem[] = [
-  { label: "Home", href: "/" },
-  { label: "What We Offer", href: "#what-we-offer" },
-  { label: "Why Us", href: "#why-us" },
+  { label: "The App", href: "#what-we-offer" },
+  { label: "Features", href: "#features" },
+  { label: "FAQ", href: "#faq" },
 ];
 
 export const APP_URLS = {

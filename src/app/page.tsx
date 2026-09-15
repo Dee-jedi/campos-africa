@@ -2,9 +2,9 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/home/HeroSection";
 import { StatsBar } from "@/components/home/StatsBar";
-import { AcademicPillar } from "@/components/home/AcademicPillar";
-import { MarketplacePillar } from "@/components/home/MarketplacePillar";
-import { CommunityPillar } from "@/components/home/CommunityPillar";
+import { OfferingsSection } from "@/components/home/OfferingsSection";
+import { EcosystemRoadmap } from "@/components/home/EcosystemRoadmap";
+import { FaqSection } from "@/components/home/FaqSection";
 import { CtaBanner } from "@/components/home/CtaBanner";
 
 export default function Home() {
@@ -14,9 +14,9 @@ export default function Home() {
       <main className="flex-1">
         <HeroSection />
         <StatsBar />
-        <AcademicPillar />
-        <MarketplacePillar />
-        <CommunityPillar />
+        <OfferingsSection />
+        <EcosystemRoadmap />
+        <FaqSection />
         <CtaBanner />
       </main>
       <Footer />

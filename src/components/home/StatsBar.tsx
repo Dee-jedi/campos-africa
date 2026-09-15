@@ -41,15 +41,21 @@ const StatItem = ({ stat }: { stat: typeof STATS[0] }) => {
   const { count, ref } = useCountUp(stat.value, 2000);
   
   return (
-    <div ref={ref} className="flex flex-col items-center">
-      <span className={`font-geist text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter ${stat.accentColor || "text-campos-navy"}`}>
-        {stat.prefix}{count.toLocaleString()}{stat.suffix}
-      </span>
+    <div ref={ref} className="flex flex-col items-center py-6 first:pt-2 last:pb-2 md:py-2 md:px-6">
+      <div className="flex items-baseline justify-center font-geist text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-slate-900">
+        {stat.prefix && <span>{stat.prefix}</span>}
+        <span>{count.toLocaleString()}</span>
+        {stat.suffix && (
+          <span className="text-campos-blue font-bold ml-0.5 text-3xl sm:text-4xl md:text-5xl">
+            {stat.suffix}
+          </span>
+        )}
+      </div>
       <span className="text-sm sm:text-base font-bold text-slate-800 mt-2 line-clamp-1">
         {stat.label}
       </span>
       {stat.sublabel && (
-        <span className="text-xs sm:text-sm text-slate-500 mt-1 max-w-50 hidden sm:block">
+        <span className="text-xs sm:text-sm text-slate-500 mt-1 max-w-60">
           {stat.sublabel}
         </span>
       )}
@@ -59,14 +65,17 @@ const StatItem = ({ stat }: { stat: typeof STATS[0] }) => {
 
 export const StatsBar: React.FC = () => {
   return (
-    <section id="why-us" className="border-y border-slate-100 bg-slate-50/70 py-12 sm:py-16 scroll-mt-20">
+    <section id="why-us" className="py-8 sm:py-14 bg-white scroll-mt-20">
       <Container>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-12 text-center">
-          {STATS.map((stat) => (
-            <StatItem key={stat.label} stat={stat} />
-          ))}
+        <div className="relative rounded-3xl bg-slate-50/80 border border-slate-200/80 p-6 sm:p-8 md:p-10 shadow-xs">
+          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-200/80 text-center">
+            {STATS.map((stat) => (
+              <StatItem key={stat.label} stat={stat} />
+            ))}
+          </div>
         </div>
       </Container>
     </section>
   );
 };
+
