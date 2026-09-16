@@ -3,6 +3,7 @@ import { NavItem } from "@/types";
 export const NAV_LINKS: NavItem[] = [
   { label: "The App", href: "#what-we-offer" },
   { label: "Features", href: "#features" },
+  { label: "Reviews", href: "#testimonials" },
   { label: "FAQ", href: "#faq" },
 ];
 

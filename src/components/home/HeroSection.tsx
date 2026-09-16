@@ -1,11 +1,11 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import FeatureFan from "@/components/home/FeatureFan";
 import { motion } from "framer-motion";
 import { HERO_UNIVERSITIES } from "@/constants/universities";
+import { APP_URLS } from "@/data/navigation";
 
 export const HeroSection: React.FC = () => {
   const [uniIndex, setUniIndex] = useState(0);
@@ -65,7 +65,7 @@ export const HeroSection: React.FC = () => {
               <span className="font-semibold tracking-tight text-slate-500">
                 {displayedText}
               </span>
-              <span className="inline-block w-[2.5px] sm:w-[3px] h-[0.85em] bg-slate-400 align-baseline ml-0.5 animate-pulse" />
+              <span className="inline-block w-[2.5px] sm:w-0.75 h-[0.85em] bg-slate-400 align-baseline ml-0.5 animate-pulse" />
               ,
             </span>
 
@@ -92,17 +92,19 @@ export const HeroSection: React.FC = () => {
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8 sm:mb-16"
           >
-            <Link
-              href="/get-app"
+            <a
+              href={APP_URLS.playStore}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group w-full sm:w-62.5 px-6 py-3.5 bg-slate-900 hover:bg-black text-white rounded-full font-bold text-[1.05rem] transition-all duration-200 shadow-xl shadow-slate-900/15 active:scale-[0.98] flex items-center justify-center"
             >
               <span className="whitespace-nowrap">Get App</span>
               <svg className="w-5 h-5 ml-2 transition-transform duration-200 group-hover:translate-x-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 12h14M12 5l7 7-7 7" />
               </svg>
-            </Link>
-            <Link
-              href="/web-app"
+            </a>
+            <a
+              href={APP_URLS.webApp}
               className="group w-full sm:w-62.5 px-6 py-3.5 bg-white hover:bg-slate-50 text-slate-800 border border-slate-200/90 hover:border-slate-300 rounded-full font-bold text-[1.05rem] shadow-xs hover:shadow-sm transition-all duration-200 active:scale-[0.98] flex items-center justify-center"
             >
               <span className="whitespace-nowrap">Launch Web App</span>
@@ -120,7 +122,7 @@ export const HeroSection: React.FC = () => {
                 <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
                 <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
               </svg>
-            </Link>
+            </a>
           </motion.div>
         </div>
 

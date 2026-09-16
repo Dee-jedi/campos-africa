@@ -2,8 +2,7 @@
 
 import React, { useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { NAV_LINKS } from "@/data/navigation";
+import { NAV_LINKS, APP_URLS } from "@/data/navigation";
 
 interface MobileNavProps {
   isOpen: boolean;
@@ -81,8 +80,10 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
 
         {/* Bottom CTA Area */}
         <div className="pt-6 border-t border-slate-100 flex flex-col gap-2.5">
-          <Link
-            href="/get-app"
+          <a
+            href={APP_URLS.playStore}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={onClose}
             className="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-full bg-slate-900 hover:bg-black text-white font-bold text-[1.05rem] shadow-xl shadow-slate-900/15 active:scale-[0.98] transition-all"
           >
@@ -90,9 +91,9 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
             <svg className="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 12h14M12 5l7 7-7 7" />
             </svg>
-          </Link>
-          <Link
-            href="/web-app"
+          </a>
+          <a
+            href={APP_URLS.webApp}
             onClick={onClose}
             className="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-full bg-white hover:bg-slate-50 border-2 border-slate-200 hover:border-slate-300 text-slate-800 font-bold text-[1.05rem] shadow-xs active:scale-[0.98] transition-all group"
           >
@@ -111,7 +112,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
               <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
               <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
             </svg>
-          </Link>
+          </a>
           <p className="text-[11px] text-center text-slate-400 font-medium mt-1">
             &quot;If it&apos;s on campus, it&apos;s on Campos.&quot;
           </p>

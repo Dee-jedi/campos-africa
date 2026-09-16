@@ -9,8 +9,8 @@ import { RoadmapCard } from "@/components/home/RoadmapCard";
 export const EcosystemRoadmap: React.FC = () => {
   return (
     <section id="features" className="py-16 sm:py-24 md:py-32 bg-slate-50/40 relative overflow-hidden scroll-mt-20">
-      {/* Background Soft Ambient Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] sm:w-[900px] h-[500px] bg-gradient-to-tr from-blue-500/5 via-violet-500/5 to-transparent rounded-full blur-3xl pointer-events-none -z-10" />
+      {/* Subtle Mesh Gradient Background (Consistent with Campos App Theme) */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] sm:w-[900px] h-[500px] bg-linear-to-tr from-campos-blue/5 via-blue-500/5 to-transparent rounded-full blur-[120px] pointer-events-none -z-10" />
 
       <Container>
         {/* ======================================================== */}
@@ -44,7 +44,7 @@ export const EcosystemRoadmap: React.FC = () => {
                 {/* Connecting Line Segment between this card's center and next card's center */}
                 {!isLast && (
                   <div
-                    className="absolute left-[15px] sm:left-[17px] top-1/2 w-[2px] h-full pointer-events-none z-0"
+                    className="absolute left-3.75 sm:left-4.25 top-1/2 w-0.5 h-full pointer-events-none z-0"
                     style={{
                       background: stepItem.gradientToNext,
                     }}

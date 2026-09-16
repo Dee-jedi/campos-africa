@@ -49,12 +49,17 @@ const APP_SCREENS: AppScreen[] = [
 const slideVariants = {
   enter: (direction: number) => ({
     x: direction > 0 ? "100%" : "-100%",
+    opacity: 1,
   }),
   center: {
     x: "0%",
+    opacity: 1,
+    zIndex: 1,
   },
   exit: (direction: number) => ({
     x: direction < 0 ? "100%" : "-100%",
+    opacity: 1,
+    zIndex: 0,
   }),
 };
 
@@ -150,7 +155,7 @@ export const OfferingsSection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-          className="relative max-w-[285px] sm:max-w-[315px] md:max-w-[335px] mx-auto"
+          className="relative max-w-71.25 sm:max-w-78.75 md:max-w-83.75 mx-auto"
         >
           {/* Soft Floating Shadow under the phone */}
           <div className="absolute -inset-1 bg-slate-900/20 rounded-[2.8rem] blur-xl -z-10" />
@@ -159,7 +164,7 @@ export const OfferingsSection: React.FC = () => {
           <div className="relative p-[1.5px] rounded-[2.6rem] sm:rounded-[2.8rem] overflow-hidden shadow-[0_25px_60px_-15px_rgba(15,23,42,0.25)] bg-slate-900">
             {/* Subtle traveling light glint on the 1.5px border */}
             <div
-              className="absolute -inset-[150%] pointer-events-none opacity-50"
+              className="absolute inset-[-150%] pointer-events-none opacity-50"
               style={{
                 background:
                   "conic-gradient(from 0deg at 50% 50%, transparent 0deg, transparent 320deg, rgba(255, 255, 255, 0.9) 345deg, transparent 360deg)",
@@ -177,8 +182,21 @@ export const OfferingsSection: React.FC = () => {
               <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-12 h-[2.5px] bg-slate-800 rounded-full z-20 pointer-events-none" />
 
               {/* Edge-to-Edge Screen Display (Clean, Uncropped Native Proportions) */}
-              <div className="relative w-full aspect-[1080/2255] rounded-[2.2rem] sm:rounded-[2.4rem] overflow-hidden bg-slate-900 shadow-inner">
-                <AnimatePresence initial={false} custom={direction} mode="popLayout">
+              <div className="relative w-full aspect-1080/2255 rounded-[2.2rem] sm:rounded-[2.4rem] overflow-hidden bg-slate-900 shadow-inner">
+                {/* Static fallback: always shows the current image so there's never a black frame */}
+                <Image
+                  src={currentScreen.imageSrc}
+                  alt=""
+                  fill
+                  priority
+                  quality={95}
+                  className="object-cover object-top"
+                  sizes="(max-width: 640px) 100vw, 670px"
+                  aria-hidden="true"
+                />
+
+                {/* Animated slide layer on top */}
+                <AnimatePresence initial={false} custom={direction} mode="sync">
                   <motion.div
                     key={currentScreen.id}
                     custom={direction}
@@ -190,6 +208,7 @@ export const OfferingsSection: React.FC = () => {
                       x: { type: "spring", stiffness: 300, damping: 30 },
                     }}
                     className="absolute inset-0 w-full h-full"
+                    style={{ willChange: "transform" }}
                   >
                     <Image
                       src={currentScreen.imageSrc}
@@ -204,7 +223,7 @@ export const OfferingsSection: React.FC = () => {
                 </AnimatePresence>
 
                 {/* Ultra-subtle Glass Specular Reflection */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.02] to-white/[0.06] pointer-events-none" />
+                <div className="absolute inset-0 bg-linear-to-tr from-transparent via-white/2 to-white/6 pointer-events-none" />
               </div>
             </div>
           </div>
@@ -245,7 +264,7 @@ export const OfferingsSection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-40px" }}
           transition={{ duration: 0.6, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-          className="w-full max-w-[285px] sm:max-w-[315px] md:max-w-[335px] mx-auto mt-7 sm:mt-8 px-1 flex items-center justify-between"
+          className="w-full max-w-71.25 sm:max-w-78.75 md:max-w-83.75 mx-auto mt-7 sm:mt-8 px-1 flex items-center justify-between"
         >
           {/* Left: 01 ───── 05 */}
           <div className="flex items-center gap-3">
@@ -254,7 +273,7 @@ export const OfferingsSection: React.FC = () => {
             </span>
 
             {/* Dynamic Electric Blue Progress Line */}
-            <div className="w-16 sm:w-20 h-[2px] bg-slate-200 rounded-full overflow-hidden relative">
+            <div className="w-16 sm:w-20 h-0.5 bg-slate-200 rounded-full overflow-hidden relative">
               <motion.div
                 className="h-full bg-campos-blue rounded-full"
                 animate={{

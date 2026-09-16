@@ -17,7 +17,7 @@ export const FaqSection: React.FC = () => {
   return (
     <section id="faq" className="py-20 sm:py-28 md:py-36 bg-white relative scroll-mt-20 overflow-hidden">
       {/* Background Subtle Gradient Mesh */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] sm:w-[900px] h-[500px] bg-gradient-to-tr from-blue-500/5 via-indigo-500/5 to-transparent rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] sm:w-[900px] h-[500px] bg-linear-to-tr from-blue-500/5 via-indigo-500/5 to-transparent rounded-full blur-3xl pointer-events-none -z-10" />
 
       <Container>
         {/* ======================================================== */}
@@ -47,7 +47,18 @@ export const FaqSection: React.FC = () => {
             const isOpen = openIndex === idx;
 
             return (
-              <div key={idx} className="group">
+              <motion.div
+                key={idx}
+                className="group"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{
+                  duration: 0.5,
+                  delay: idx * 0.06,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
+              >
                 {/* Accordion Row Header */}
                 <button
                   onClick={() => toggleItem(idx)}
@@ -101,13 +112,19 @@ export const FaqSection: React.FC = () => {
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </div>
+              </motion.div>
             );
           })}
         </div>
 
         {/* Support Footnote */}
-        <div className="text-center mt-12 sm:mt-16">
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          className="text-center mt-12 sm:mt-16"
+        >
           <p className="text-xs sm:text-sm text-slate-500 font-normal">
             Have a question that isn&apos;t covered here? Reach us{" "}
             <a
@@ -118,7 +135,7 @@ export const FaqSection: React.FC = () => {
             </a>
             .
           </p>
-        </div>
+        </motion.div>
       </Container>
     </section>
   );

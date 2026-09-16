@@ -6,8 +6,8 @@ import { Footer } from "@/components/layout/Footer";
 import { APP_URLS } from "@/data/navigation";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Campos Africa",
-  description: "Learn how Campos collects, uses, and protects your personal information.",
+  title: "Privacy Policy",
+  description: "Learn how Campos Africa collects, uses, and protects your personal information. We are committed to keeping African university students' data safe and secure.",
 };
 
 export default function PrivacyPage() {

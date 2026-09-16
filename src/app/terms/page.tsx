@@ -6,8 +6,8 @@ import { Footer } from "@/components/layout/Footer";
 import { APP_URLS } from "@/data/navigation";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | Campos Africa",
-  description: "Terms of Service and usage guidelines for the Campos Africa platform.",
+  title: "Terms of Service",
+  description: "Terms of Service and usage guidelines for the Campos Africa platform. Understand your rights and responsibilities as a Campos user.",
 };
 
 export default function TermsPage() {

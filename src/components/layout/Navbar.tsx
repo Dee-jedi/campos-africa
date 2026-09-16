@@ -56,9 +56,9 @@ export const Navbar: React.FC = () => {
                 src="/images/icon.png"
                 alt="Campos Africa logo"
                 fill
+                sizes="40px"
                 priority
                 className="object-cover"
-                sizes="40px"
               />
             </div>
             <span className="font-geist text-xl sm:text-2xl font-semibold sm:font-bold tracking-tight text-campos-navy">

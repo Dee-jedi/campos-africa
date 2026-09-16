@@ -1,8 +1,11 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { APP_URLS } from "@/data/navigation";
 import { Container } from "@/components/ui/Container";
+import { motion } from "framer-motion";
 
 export const Footer: React.FC = () => {
   return (
@@ -14,7 +17,13 @@ export const Footer: React.FC = () => {
         <div className="flex flex-col items-center gap-10 text-center">
           
           {/* Links Row */}
-          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-xs sm:text-sm text-slate-500 font-medium">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-xs sm:text-sm text-slate-500 font-medium"
+          >
             <Link href="/privacy" className="hover:text-slate-900 transition-colors">
               Privacy Policy
             </Link>
@@ -27,10 +36,16 @@ export const Footer: React.FC = () => {
             <a href="#" className="hover:text-slate-900 transition-colors">
               Go to top
             </a>
-          </div>
+          </motion.div>
 
           {/* Bottom Row: Logo and Socials - Sweet Spot Spacing */}
-          <div className="w-full flex flex-row items-center justify-center gap-16 sm:gap-24 mt-6">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-30px" }}
+            transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full flex flex-row items-center justify-center gap-16 sm:gap-24 mt-6"
+          >
             {/* Logo */}
             <Link href="/" className="inline-block hover:opacity-80 transition-opacity">
               <div className="relative w-9 h-9 opacity-75 grayscale hover:grayscale-0 transition-all rounded-xl overflow-hidden shadow-sm">
@@ -38,6 +53,7 @@ export const Footer: React.FC = () => {
                   src="/images/icon.png"
                   alt="Campos icon"
                   fill
+                  sizes="36px"
                   className="object-cover"
                 />
               </div>
@@ -82,7 +98,7 @@ export const Footer: React.FC = () => {
                 </svg>
               </a>
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </Container>

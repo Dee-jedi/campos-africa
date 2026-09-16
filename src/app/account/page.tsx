@@ -6,8 +6,8 @@ import { Footer } from "@/components/layout/Footer";
 import { APP_URLS } from "@/data/navigation";
 
 export const metadata: Metadata = {
-  title: "Account Deletion | Campos Africa",
-  description: "Instructions for requesting account deletion and data removal on Campos.",
+  title: "Account Deletion",
+  description: "Request account deletion and data removal on Campos Africa. We respect your right to control your personal data.",
 };
 
 export default function AccountPage() {

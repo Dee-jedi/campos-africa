@@ -4,6 +4,7 @@ import { HeroSection } from "@/components/home/HeroSection";
 import { StatsBar } from "@/components/home/StatsBar";
 import { OfferingsSection } from "@/components/home/OfferingsSection";
 import { EcosystemRoadmap } from "@/components/home/EcosystemRoadmap";
+import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { FaqSection } from "@/components/home/FaqSection";
 import { CtaBanner } from "@/components/home/CtaBanner";
 
@@ -16,6 +17,7 @@ export default function Home() {
         <StatsBar />
         <OfferingsSection />
         <EcosystemRoadmap />
+        <TestimonialsSection />
         <FaqSection />
         <CtaBanner />
       </main>

@@ -17,7 +17,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     question: "How does the Study Leaderboard and cash prize payout work?",
     answer:
-      "Whenever you study on Campos, your study duration is tracked automatically. Maintaining daily study consistency builds streaks, which are ranked on campus leaderboards. If you finish in the Top 3, you win real cash prizes transferred directly to your account.",
+      "Whenever you study on Campos, your study duration is tracked automatically. Maintaining daily study consistency builds streaks, which are ranked on Campos Leaderboard. If you finish in the Top 3, you win real cash prizes transferred directly to your account.",
   },
   {
     question: "Is Campos free to use for students?",

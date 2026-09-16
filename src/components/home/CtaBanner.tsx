@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import { Container } from "@/components/ui/Container";
 import { APP_URLS } from "@/data/navigation";
+import { motion } from "framer-motion";
 
 export const CtaBanner: React.FC = () => {
   return (
@@ -13,32 +16,56 @@ export const CtaBanner: React.FC = () => {
       <Container>
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
           {/* Over-heading */}
-          <h4 className="font-geist text-sm sm:text-base font-bold text-slate-500 mb-4 sm:mb-6 uppercase tracking-wider">
+          <motion.h4
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="font-geist text-sm sm:text-base font-bold text-slate-500 mb-4 sm:mb-6 uppercase tracking-wider"
+          >
             Ready to elevate your campus experience?
-          </h4>
+          </motion.h4>
 
           {/* Main Massive Heading */}
-          <h2 className="font-geist text-[3.5rem] leading-[1] sm:text-7xl md:text-8xl lg:text-[110px] font-black tracking-tight mb-6 sm:mb-10 sm:leading-[0.9]">
+          <motion.h2
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.7, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
+            className="font-geist text-[3.5rem] leading-none sm:text-7xl md:text-8xl lg:text-[110px] font-black tracking-tight mb-6 sm:mb-10 sm:leading-[0.9]"
+          >
             <span className="text-slate-400">Get</span> <span className="text-slate-900">Campos</span>
-          </h2>
+          </motion.h2>
 
           {/* Paragraph */}
-          <p className="text-sm sm:text-base md:text-lg text-slate-500 max-w-2xl mx-auto mb-10 sm:mb-12 font-medium leading-relaxed">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+            className="text-sm sm:text-base md:text-lg text-slate-500 max-w-2xl mx-auto mb-10 sm:mb-12 font-medium leading-relaxed"
+          >
             <span className="block sm:hidden">
               Join thousands of students. Access study materials, AI tutoring, and the campus marketplace all in one place.
             </span>
             <span className="hidden sm:block">
               Great things happen when the right materials, practice tools, and gamified learning agree. Join thousands of students using Campos to access study materials, AI tutoring, and trade on the campus marketplace.
             </span>
-          </p>
+          </motion.p>
 
           {/* Buttons: Fixed width to prevent stretching and perfectly match HeroSection visually */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.6, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          >
             <a
               href={APP_URLS.playStore}
               target="_blank"
               rel="noopener noreferrer"
-              className="group w-[250px] px-6 py-3.5 bg-slate-900 hover:bg-black text-white rounded-full font-bold text-[1.05rem] transition-all duration-200 shadow-xl shadow-slate-900/15 active:scale-[0.98] flex items-center justify-center"
+              className="group w-62.5 px-6 py-3.5 bg-slate-900 hover:bg-black text-white rounded-full font-bold text-[1.05rem] transition-all duration-200 shadow-xl shadow-slate-900/15 active:scale-[0.98] flex items-center justify-center"
             >
               <span className="whitespace-nowrap">Get App</span>
               <svg className="w-5 h-5 ml-2 transition-transform duration-200 group-hover:translate-x-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -47,7 +74,7 @@ export const CtaBanner: React.FC = () => {
             </a>
             <a
               href={APP_URLS.webApp}
-              className="group w-[250px] px-6 py-3.5 bg-white hover:bg-slate-50 text-slate-800 border border-slate-200/90 hover:border-slate-300 rounded-full font-bold text-[1.05rem] shadow-xs hover:shadow-sm transition-all duration-200 active:scale-[0.98] flex items-center justify-center"
+              className="group w-62.5 px-6 py-3.5 bg-white hover:bg-slate-50 text-slate-800 border border-slate-200/90 hover:border-slate-300 rounded-full font-bold text-[1.05rem] shadow-xs hover:shadow-sm transition-all duration-200 active:scale-[0.98] flex items-center justify-center"
             >
               <span className="whitespace-nowrap">Launch Web App</span>
               <svg
@@ -65,7 +92,7 @@ export const CtaBanner: React.FC = () => {
                 <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
               </svg>
             </a>
-          </div>
+          </motion.div>
         </div>
       </Container>
     </section>
