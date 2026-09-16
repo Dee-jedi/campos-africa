@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from "react";
 import { Container } from "@/components/ui/Container";
-import { motion, AnimatePresence, PanInfo } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { TESTIMONIALS } from "@/data/testimonials";
 
 export const TestimonialsSection: React.FC = () => {
@@ -29,17 +29,6 @@ export const TestimonialsSection: React.FC = () => {
     return () => clearInterval(interval);
   }, [isHovered, paginate]);
 
-  // Handle swipe gestures
-  const handleDragEnd = (e: any, { offset, velocity }: PanInfo) => {
-    const swipe = Math.abs(offset.x) * velocity.x;
-    const swipeThreshold = 50;
-
-    if (swipe < -10000 || offset.x < -swipeThreshold) {
-      paginate(1);
-    } else if (swipe > 10000 || offset.x > swipeThreshold) {
-      paginate(-1);
-    }
-  };
 
   const variants = {
     enter: {
@@ -115,20 +104,8 @@ export const TestimonialsSection: React.FC = () => {
             </svg>
           </div>
 
-          {/* Container uses an invisible static clone to naturally dictate exact height! */}
-          <div className="relative w-full overflow-hidden flex justify-center">
-            {/* INVISIBLE SPACER: Sets container height dynamically so names never clip */}
-            <div className="w-full flex flex-col items-center text-center opacity-0 pointer-events-none select-none">
-              <blockquote className="font-geist text-xl sm:text-2xl md:text-[28px] font-medium leading-[1.6] sm:leading-[1.65] max-w-3xl mx-auto">
-                &ldquo;{current.quote}&rdquo;
-              </blockquote>
-              <div className="mt-8 sm:mt-10 flex flex-wrap justify-center gap-2 text-sm sm:text-base">
-                <span className="font-bold">{current.name}</span>
-                <span>•</span>
-                <span>{current.role}</span>
-              </div>
-            </div>
-
+          {/* Container uses a fixed height to prevent layout shifts during crossfade! */}
+          <div className="relative w-full h-[320px] sm:h-[260px] md:h-[280px] lg:h-[240px] overflow-visible flex justify-center">
             {/* VISIBLE ANIMATED SLIDES */}
             <AnimatePresence initial={false}>
               <motion.div
@@ -138,11 +115,7 @@ export const TestimonialsSection: React.FC = () => {
                 animate="center"
                 exit="exit"
                 transition={{ duration: 0.5, ease: "easeInOut" }}
-                drag="x"
-                dragConstraints={{ left: 0, right: 0 }}
-                dragElastic={1}
-                onDragEnd={handleDragEnd}
-                className="absolute top-0 left-0 w-full h-full flex flex-col items-center text-center cursor-grab active:cursor-grabbing"
+                className="absolute top-0 left-0 w-full h-full flex flex-col items-center text-center"
               >
                 {/* Quote Text */}
                 <blockquote className="font-geist text-xl sm:text-2xl md:text-[28px] text-slate-800 font-medium leading-[1.6] sm:leading-[1.65] tracking-tight max-w-3xl mx-auto">
