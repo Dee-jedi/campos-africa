@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.divthedev.elearn",
+      "sha256_cert_fingerprints": [
+        "09:AE:7A:CD:42:69:5B:36:44:77:D7:8E:31:7A:8E:B0:44:DE:60:36:21:CB:31:1B:8C:FB:42:1A:EC:BB:C1:89"
+      ]
+    }
+  }
+]
