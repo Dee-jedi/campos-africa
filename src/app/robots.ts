@@ -5,8 +5,9 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/account/", "/api/"], // Prevent indexing of private routes
+      disallow: ["/api/", "/_next/"],
     },
+    host: "campos.africa",
     sitemap: "https://campos.africa/sitemap.xml",
   };
 }

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/home/HeroSection";
@@ -7,6 +8,29 @@ import { EcosystemRoadmap } from "@/components/home/EcosystemRoadmap";
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { FaqSection } from "@/components/home/FaqSection";
 import { CtaBanner } from "@/components/home/CtaBanner";
+
+export const metadata: Metadata = {
+  title: "Campos Africa",
+  description:
+    "Campos is the all-in-one academic and campus app for African university students. Find study materials, past questions, CBT practice, marketplace deals, and campus updates in one place.",
+  alternates: {
+    canonical: "https://campos.africa",
+  },
+  openGraph: {
+    title: "Campos Africa",
+    description:
+      "Your campus, simplified. Study materials, past questions, market access, AI study tools, and campus resources built for African students.",
+    url: "https://campos.africa",
+    siteName: "Campos Africa",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Campos Africa",
+    description:
+      "The all-in-one academic and campus app for African university students.",
+  },
+};
 
 export default function Home() {
   return (

@@ -21,7 +21,7 @@ const OG_IMAGE = `${SITE_URL}/images/og-image.jpg`;
 export const metadata: Metadata = {
   // ───────────────────────── Core ─────────────────────────
   title: {
-    default: "Campos — If it's on campus, it's on Campos",
+    default: "Campos Africa",
     template: "%s | Campos Africa",
   },
   description:
@@ -108,7 +108,7 @@ export const metadata: Metadata = {
     locale: "en_NG",
     url: SITE_URL,
     siteName: "Campos Africa",
-    title: "Campos — If it's on campus, it's on Campos",
+    title: "Campos Africa",
     description:
       "Your campus, simplified. Study materials, past questions, a safe marketplace, AI study tools, and a leaderboard where hard work pays real cash — all in one app built for African university students.",
     images: [
