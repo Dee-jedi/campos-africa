@@ -30,7 +30,7 @@ export default function PrivacyPage() {
 
           <p className="mt-4 text-slate-600 leading-relaxed text-sm sm:text-base">
             Campos is an educational mobile application developed and operated by{" "}
-            <strong className="text-slate-900 font-semibold">Divine Monday</strong>. Your privacy is important to us. This
+            <strong className="text-slate-900 font-semibold">Disphere Ltd</strong>. Your privacy is important to us. This
             Privacy Policy explains how Campos collects, uses, and protects your
             information when you use the Campos app and related services.
           </p>
