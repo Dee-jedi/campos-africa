@@ -63,7 +63,15 @@ export default function PrivacyPage() {
             </li>
             <li>
               <strong className="text-slate-800 font-semibold">Device &amp; Usage Data:</strong> App version, device type, and
-              general usage analytics for performance and security.
+              general usage analytics for performance and security. We also collect device identifiers (such as
+              push-notification tokens and an anonymous app-install ID) to deliver notifications and to measure how the
+              app is used. These are not used for advertising and are not sold.
+            </li>
+            <li>
+              <strong className="text-slate-800 font-semibold">Usage Analytics:</strong> We collect information about how
+              Campos is used (for example, which screens are opened and which features are used) to improve the app. This
+              is linked to your account ID only and never includes your name, email, messages or search text. Analytics
+              are processed by PostHog.
             </li>
           </ul>
 
@@ -87,8 +95,8 @@ export default function PrivacyPage() {
           </h2>
           <ul className="list-disc list-inside mt-3 text-slate-600 space-y-2 text-sm sm:text-base leading-relaxed">
             <li>
-              With trusted third-party services (such as Firebase and Paystack)
-              strictly to operate and maintain Campos.
+              With trusted third-party service providers (Firebase, Paystack and PostHog) strictly to operate, maintain
+              and improve Campos.
             </li>
             <li>When required by law or valid legal processes.</li>
             <li>
@@ -175,7 +183,7 @@ export default function PrivacyPage() {
           </p>
 
           <p className="mt-10 pt-6 border-t border-slate-100 text-slate-400 text-xs sm:text-sm">
-            Last updated: March 2025
+            Last updated: November 2026
           </p>
         </div>
       </main>
